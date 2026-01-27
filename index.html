@@ -389,6 +389,82 @@
 .modal-content h2{
     color:#0d47a1;   /* Deep Blue (Fixed) */
 }
+	
+/* Header */
+
+header h1{
+    font-size:42px;
+    font-weight:700;
+}
+header p{
+    font-size:18px;
+    margin-top:15px;
+    opacity:0.95;
+}
+
+/* Section */
+section{
+    padding:70px 10%;
+}
+
+/* Scroll Animation */
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 1s ease;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* About Box */
+.about{
+    background:#ffffff;
+    border-radius:14px;
+    padding:45px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.1);
+}
+.about h2{
+    color:#004aad;
+    margin-bottom:20px;
+    font-size:32px;
+}
+.about p{
+    font-size:17px;
+}
+
+/* Services */
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+.service-box{
+    background:#ffffff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+.service-box:hover{
+    transform:translateY(-10px);
+}
+.service-box h3{
+    color:#00b4d8;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    header h1{
+        font-size:30px;
+    }
+    section{
+        padding:50px 6%;
+    }
+}
 
 
   </style>
@@ -400,9 +476,13 @@
 <header>
 <div style="background:#f2bc50;font-family:Arial Rounded MT;text-align:center;"><b>DIGITAL FUTURE TRANING CENTRE PRIVET LIMITED</b></DIV>
   <div class="nav-container">
-    <div class="nav-logo">
+  <img src="https://lh3.googleusercontent.com/p/AF1QipMWBKH-2GigRZ_OYEcaRzOF_2KI-Zpk-ApVth6w=s1360-w1360-h1020-rw"" height="38px" style="border-radius: 50%;
+    object-fit: cover;
+   	margin-top:6px;
+    border: 0px solid #0a58ca; /* চাইলে বর্ডার বাদ দিতে পারো */">  
+  	<div class="nav-logo">
    
-     <font color="yellow"><b> DFIT Computer PVT LTD </b></font></div>
+     <font color="yellow"><b> DFIT Computer </b></font></div>
     <div style="display:flex;align-items:center;gap:10px;">
       <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">&#9776;</div>
       <button class="toggle-btn" id="toggleBtn"><i class="fas fa-moon"></i></button>
@@ -523,9 +603,73 @@
 
 </center>
 
-<image src="https://lh3.googleusercontent.com/p/AF1QipMWBKH-2GigRZ_OYEcaRzOF_2KI-Zpk-ApVth6w=s1360-w1360-h1020-rw" width="49%" >
 
-<image src="https://www.idg.edu.kh/wp-content/uploads/2025/10/96117-tta-remote-training.gif" width="49%" >
+
+<!-- About Us -->
+<section>
+    <div class="about reveal">
+        <h2>About Us</h2>
+        <p>
+            Our Digital Training Centre & Online Cyber Cafe is a modern and reliable institution
+            dedicated to empowering individuals through technology and digital services.
+        </p>
+        <br>
+        <p>
+            We provide professional computer training along with essential online services,
+            helping students and the general public build skills, confidence, and digital independence.
+        </p>
+    </div>
+</section>
+
+<!-- Services -->
+<section>
+    <div class="services">
+
+        <div class="service-box reveal">
+            <h3>💻 Computer Training Centre</h3>
+            <p>
+                We offer Basic Computer, Diploma, Advanced Diploma, Tally Prime with GST,
+                Advanced Excel, Web Design, and Graphics Design courses.
+            </p>
+        </div>
+
+        <div class="service-box reveal">
+            <h3>🖨️ Online Cyber Cafe</h3>
+            <p>
+                Online form filling, Aadhaar services, PAN card, voter ID,
+                printing, scanning, lamination, and all types of online support.
+            </p>
+        </div>
+
+        <div class="service-box reveal">
+            <h3>📜 Certification & Career Guidance</h3>
+            <p>
+                After course completion, we provide certificates and career guidance
+                to help students move forward with confidence.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+
+
+<script>
+function revealOnScroll(){
+    let reveals = document.querySelectorAll(".reveal");
+    reveals.forEach(function(el){
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
+        if(elementTop < windowHeight - 100){
+            el.classList.add("active");
+        }
+    });
+}
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+	<center><image src="https://www.idg.edu.kh/wp-content/uploads/2025/10/96117-tta-remote-training.gif" width="100%""></center>
 
 
 <section class="course-section">
@@ -768,7 +912,6 @@ function closeModal(){
 </script>
 </body>
 </html>
-
 
 
 
